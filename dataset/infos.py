@@ -124,15 +124,19 @@ def match_game(game, exact=True, platform=True, interactive=False):
 find_not_founds = True
 resume_discard = True
 
+game_data = []
+not_found_games = set()
+
 if find_not_founds:
     games = set([(x[0], x[1]) for x in json.load(open('not_found_games.json'))])
     with open('game_data_raw_appendix.json', 'r', encoding = 'utf-8') as infile:
-        already_found = set([(x[0][0], x[0][1]) for x in json.load(infile)])
+        game_data = [((x[0][0], x[0][1]),x[1]) for x in json.load(infile)]
+        already_found = set([x[0] for x in game_data])
         games.difference_update(already_found)
     if resume_discard:
         with open('not_found_games_appendix.json', 'r', encoding = 'utf-8') as infile:
-            already_discarded = set([(x[0],x[1]) for x in json.load(infile)])
-            games.difference_update(already_discarded)
+            not_found_games = set([(x[0],x[1]) for x in json.load(infile)])
+            games.difference_update(not_found_games)
 
 else:
     midi_db = json.load(open('midi_db.json'))
@@ -145,8 +149,6 @@ else:
 
 num_games = len(games)
 
-game_data = []
-not_found_games = set()
 
 for idx, game in enumerate(games):
     print('%d/%d:'%(idx+1, num_games), game)
