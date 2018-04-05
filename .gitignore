@@ -1,3 +1,6 @@
+# ignoring dataset of midi files
+dataset/full
+
 
 # Created by https://www.gitignore.io/api/python,jupyternotebook
 
@@ -109,4 +112,3 @@ venv.bak/
 
 
 # End of https://www.gitignore.io/api/python,jupyternotebook
-

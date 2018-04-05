@@ -91,7 +91,7 @@ def match_game(game, exact=True, platform=True, interactive=False):
             if idx:
                 print("%s -> %s"%(game_name,data[names[idx]]['GameTitle']))
                 return data[names[idx]]
-    if not exact and not platform and interactive:
+    if interactive:
         game_id =  int(input("Enter the game id from tgdb or -1 if not present: "))
         if game_id < 0:
             return None
@@ -150,10 +150,10 @@ else:
 num_games = len(games)
 
 
-for idx, game in enumerate(games):
+for idx, game in enumerate(sorted(games)):
     print('%d/%d:'%(idx+1, num_games), game)
-    for bool1 in (True, False):
-        for bool2 in (True, False):
+    for bool1 in [False]:
+        for bool2 in [True]:
             res = match_game(game, bool1, bool2, find_not_founds)
             if res:
                 break
