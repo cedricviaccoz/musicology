@@ -69,6 +69,8 @@ Since this research will focus on video game genres, already some basic statisti
 
 Games can have multiples genres (like Action-Adventure, MMO-Figthing, and others) thus such games were counted in all individual categories. At this point nothing can really be inferred about the research question, except that most of the database consists of the 4 first genres listed on the table above. 
 
+At this point, no correlations can be established with the few statistics obtained and the research question, this will probably happen in the next step, when feature will get edxtracted from MIDIs.
+
 Other marginal statistics regarding distribution of MIDI according to the platform or the games can be found in the jupyter notebook "Data Exploration.ipynb"
 
 ## Subsequent steps
