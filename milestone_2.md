@@ -31,7 +31,7 @@ All this cleaning reducted the original number of 31658 files to 22179.
 ## Basic Statistics
 Since this research will focus on video game genres, already some basic statistics were computed. 19 genres were identified in total, however, only 10 represents indivuadally at least 3% of the dataset, and 6 represent at least 9%. Below is a table holding the percentage on how each category is represented within the dataset : 
 
-| Category | Over 100 |
+| Category | % |
 | -------- | -------- |
 | Action | 44.93 |
 | Role-Playing | 33.84 |
@@ -52,3 +52,8 @@ Since this research will focus on video game genres, already some basic statisti
 | MMO | 0.35 |
 | Flight Simulator | 0.26 |
 | Vehicle Simulation | <0.01 |
+
+Games can have multiples genres (like Action-Adventure, MMO-Figthing, and others) thus such games were counted in all individual categories. At this point nothing can really be inferred about the research question, except that most of the database consists of the 4 first genres listed on the table above. 
+
+#Subsequent steps
+
