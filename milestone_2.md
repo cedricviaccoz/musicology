@@ -10,7 +10,10 @@ Fetching all the necesserary data was mostly automatised using python scripts ru
 The matching was done using both the information of the console from the VGMA and the game title, the treshold for the game title was set quite high to avoid bad matching. Using this method, out of the 3918 games that all the MIDI files belongs to, 690 could not be automatically referenced. Those unmatched games were assigned manually to a game from TGDB and out of those 690, only 152 were not matched at all (mainly because they either referenced games that did not exist on TGDB or because they referenced several games, because there are some medleys on VGMA).
 
 ## Preprocessing 
-Except the actual MIDI files, raw data scraped from both sources were stored in JSON file, and put in common in one CSV file which serve as the entry point for the data analysis, containing the following fields (all fields containing the prefix "tgdb" are informations obtained on TheVideoGamesDB.net) : 
+
+Before dwelling on all the description and processing of the data, some biases in the representativeness of the dataset should be adressed. MIDI files from games published on Nintendo console are the most represented within the dataset. Most notably MIDI from games published on the Super Nintendo Entertainment System (SNES) are the most represented (6708 files over the 31658 total). This bias might originate from different factor that all can be rooted in the user-submitted policy of the archive. The hardware limitation of the SNES made most of the music compositions made for the device relatively simple (see http://battleofthebits.org/lyceum/View/spc+%28format%29/) and simple compositions are easier to sequence by users. Also most video game enthusiasts today feel nostalgic about this era of gaming, and might hold more importance to the tunes produced in this era. 
+
+Except the actual MIDI files, raw data scraped from both sources were stored in JSON file, and put in common in one CSV file which serve as the entry point for the data analysis, containing the following fields (all fields containing the prefix "tgdb" are informations obtained from TheVideoGamesDB.net) : 
 * _brand_: The video game industry which has produced the console.
 * _console_: The game system on which the game was edited.
 * _title_: Title of the video game song
@@ -35,7 +38,9 @@ One side effect of the user submitted policy of the video game music archive, wa
 
 Finally, the plateform allows several sequencing to be submitted for a particular song. The webplatform would denote all those "duplicates" with (1), (2),... in the title. We chose for the moment to only keep one of those version, in order to avoid having too much duplicates or songs very close one to another that would bias the dataset. This was definitively the most consequent reduction of the dataset, as 6358 files were concerned.
 
-All this cleaning reducted the original number of 31658 files to 22179. 
+The ultimate cleaning step was to check the validity of all the MIDI files. Using [Mido](https://mido.readthedocs.io/en/latest/), a famous python library that can deal with MIDI, a temptative to load each file was made. If the opening resulted in an exception from the library, the MIDI file was considered unvalid, and thus dropped from the dataset. Fortunately, only 117 MIDIs were esteemed "unvalid".
+
+All this cleaning reducted the original number of 31658 files to 22062, and caused the total range of games treated to drop from 3388 to 3237. 
 
 ## Basic Statistics
 Since this research will focus on video game genres, already some basic statistics were computed. 19 genres were identified in total, however, only 10 represents indivuadally at least 3% of the dataset, and 6 represent at least 9%. Below is a table holding the percentage on how each genre is represented within the dataset in term of midi files : 
@@ -64,5 +69,9 @@ Since this research will focus on video game genres, already some basic statisti
 
 Games can have multiples genres (like Action-Adventure, MMO-Figthing, and others) thus such games were counted in all individual categories. At this point nothing can really be inferred about the research question, except that most of the database consists of the 4 first genres listed on the table above. 
 
-#Subsequent steps
+Other marginal statistics regarding distribution of MIDI according to the platform or the games can be found in the jupyter notebook "Data Exploration.ipynb"
 
+## Subsequent steps
+As stated previously, an incremental approach will be used to try to identify features according to game genres using the MIDI. The processus will thus probably begin by fairly easy data analysis, the most simple being to extract the BPM from each MIDI, and produce average of it for all games genres. If some kind of correlation seems to exist between those numbers et the kind of gameplay proposed by the video game genre, an interpretation for this feature could then be defined. Regardless of the result of this step, the processus will then start again with another proposed or hypothetic feature that could be extracted from the MIDIs. If too many consecutive iterations of the processus fail to bring coherent interpretations between features and particular genre's gameplay, the research question might need to get adjusted to a maybe less ambitions frame, such as game genre classification, or more straightforward descriptive data analysis. 
+
+As most of this project uses python, computationally approaches using this programming langage will keep on be used. Since already some exploratory work with MIDI using the library Mido was made, it will be the framework used to extract data from MIDI files for the near future. Other more powerful tools might be considered later in the developement when more complex or more abstract musical features will be needed to get extracted or analysed. 
