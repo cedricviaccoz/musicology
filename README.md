@@ -5,7 +5,7 @@ Repository for the DH-401 course project.
 
 ```
 .
-+-- dataset
++-- _dataset
 |  +-- _parsing
 |  +-- _scraper
 |  |  +-- _vgmusic
@@ -18,7 +18,7 @@ Repository for the DH-401 course project.
 +-- README.md
 ```
 
-The main folder of the project is currently the "dataset" one, which holds all the script for the data scrapping, and notebooks for the data analysis and exploration. On the structure above, folder are preceded by an underscore, in opposition to the normal files which are preceded by nothing. 
+The main folder of the project is currently the "dataset" one, which holds all the script for the data scrapping, and notebooks for the data analysis and exploration. On the structure above, folder are preceded by an underscore, in opposition to the normal files which are preceded by nothing particular. 
 
 The first folder "parsing" contains all the raw JSONs produced by the scraping, as well as 3 python script used to parse the raw JSONs into preprocessed JSONs needed for cross-referencing, that are also present within this folder.
 
