@@ -17,14 +17,9 @@ A problem with this website, is that it does not include any metadata regarding 
 ## Methods
 There exists no current literature on video game music and video game genre that makes a computational analysis. The best way to tackle the problem would be to use an iterative approach : going back and forth from the conceptual background of video game genre, making hypothesis about what the music of such a genre should be like and then crafting features that would seem relevant to the genre. Statistical models will be used to see if the features allow distinction between different game genres and are indeed representative of a particular game genre. Eventually, this approach's end goal would be to find and interpret features that are related to different video game genres in order to gain a better understanding of the usage of music in video games.
 ## Literature
-Studies on game music with respect to game genres have been already done in the past. These studies explores different game genres and find some general features of their music by analyzing several cases by “hand”, using a formal musicology point of view. See:
-- [Crathorne 2010](http://scholar.sun.ac.za/handle/10019.1/4355)
-- [Summers 2011](https://epub.uni-bayreuth.de/322/)
+Studies on game music with respect to game genres have been already done in the past. These studies explores different game genres and find some general features of their music by analyzing several cases by “hand”, using a formal musicology point of view (Crathorne 2010; Summers 2011).
 
-Studies on how to craft features for either MIDI files or audio files which are both informative and relevant for the genre classification task have been done in the past, though not in Ludomusicology.
-See:
-- [McKay and Fujinaga 2004](http://www.music.mcgill.ca/~ich/research/ismir2004/McKay_Fujinaga_ISMIR_2004.pdf)
-- [McKay and Fujinaga 2006](http://jmir.sourceforge.net/publications/ICMC_2006_jSymbolic.pdf)
+Studies on how to craft features for either MIDI files or audio files which are both informative and relevant for the genre classification task have been done in the past, though not in Ludomusicology, according to McKay and Fujinaga (2004, 2006).
 
 The current literature seems to indicate that it is the first time a statistical-based study of the characteristic of music genres has been done in Ludomusicology. Furthermore, past studies usually focus on classification - meaning that they aim at successfully classifying music more than understanding the feature that allows the classification - while this project focuses on interpretation.
 
@@ -33,4 +28,11 @@ Extern help might be needed concerning computational tools, libraries or statist
 - Raphaël Barman (raphael.barman@epfl.ch)
 - Hakim Invernizzi (hakim.invernizzi@epfl.ch)
 - Cédric Viaccoz (cedric.viaccoz@epfl.ch)
+
+# References
+(Satalkar, B. (2010, July 15). Water aerobics. Retrieved from http://www.buzzle.com)
+- Crathorne, P. J. (2010, March). Video game genres and their music. _University of Stellenbosch_. Retrieved from [http://scholar.sun.ac.za/handle/10019.1/4355](http://scholar.sun.ac.za/handle/10019.1/4355)
+- Summers, T. (2011, February). Playing the Tune: Video Game Music, Gamers, and Genre. _Universität Bayreuth_. Retrived from [https://epub.uni-bayreuth.de/322/](https://epub.uni-bayreuth.de/322/)
+- McKay, C.; Fujinaga I. (2004). AUTOMATIC GENRE CLASSIFICATION USING LARGE HIGH-LEVEL MUSICAL FEATURE SETS. _McGill University_. Retrieved from [http://www.music.mcgill.ca/~ich/research/ismir2004/McKay_Fujinaga_ISMIR_2004.pdf](http://www.music.mcgill.ca/~ich/research/ismir2004/McKay_Fujinaga_ISMIR_2004.pdf)
+- McKay, C.; Fujinaga I. (2006).jSymbolic: A Feature Extractor for MIDI Files. _McGill University_. Retrieved from [http://jmir.sourceforge.net/publications/ICMC_2006_jSymbolic.pdf](http://jmir.sourceforge.net/publications/ICMC_2006_jSymbolic.pdf)
 

@@ -67,7 +67,7 @@ Since this research will focus on video game genres, already some basic statisti
 | Flight Simulator | 0.26 |
 | Vehicle Simulation | <0.01 |
 
-Games can have multiples genres (like Action-Adventure, MMO-Figthing, and others) thus such games were counted in all individual categories. At this point nothing can really be inferred about the research question, except that most of the database consists of the 4 first genres listed on the table above. 
+Games can have multiples genres (like Action-Adventure, MMO-Figthing, and others) thus such games were counted in all individual categories. At this point nothing can really be inferred about the research question, except that most of the database consists of the 4 first genres listed on the table above. However this might be considered a bias in the representativeness of the data, as the most populated genre can apply to a very broad range of game type. For example, in the adventure game genre, we could have both a game consisting of fighting monster to progress, and a game that requires the player to carefully observe his surrounding in order to find clues to progress. Those two games would have gameplay style drastically different, the former would require reflexe skills from the player while the latter would require cognitive skills. Thus, trying to interpret musical features according to the gameplay of adventure game would not have a consistant meaning through all the games within this genre. 
 
 At this point, no correlations can be established with the few statistics obtained and the research question, this will probably happen in the next step, when feature will get edxtracted from MIDIs.
 
