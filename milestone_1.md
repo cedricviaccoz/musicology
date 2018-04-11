@@ -30,7 +30,6 @@ Extern help might be needed concerning computational tools, libraries or statist
 - Cédric Viaccoz (cedric.viaccoz@epfl.ch)
 
 # References
-(Satalkar, B. (2010, July 15). Water aerobics. Retrieved from http://www.buzzle.com)
 - Crathorne, P. J. (2010, March). Video game genres and their music. _University of Stellenbosch_. Retrieved from [http://scholar.sun.ac.za/handle/10019.1/4355](http://scholar.sun.ac.za/handle/10019.1/4355)
 - Summers, T. (2011, February). Playing the Tune: Video Game Music, Gamers, and Genre. _Universität Bayreuth_. Retrived from [https://epub.uni-bayreuth.de/322/](https://epub.uni-bayreuth.de/322/)
 - McKay, C.; Fujinaga I. (2004). AUTOMATIC GENRE CLASSIFICATION USING LARGE HIGH-LEVEL MUSICAL FEATURE SETS. _McGill University_. Retrieved from [http://www.music.mcgill.ca/~ich/research/ismir2004/McKay_Fujinaga_ISMIR_2004.pdf](http://www.music.mcgill.ca/~ich/research/ismir2004/McKay_Fujinaga_ISMIR_2004.pdf)
