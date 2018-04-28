@@ -1,4 +1,4 @@
-# Digital musicology (DH-401)
+# Video Game Music : A study of genre
 Repository for the DH-401 course project.
 
 ## Organisation of the repository :
