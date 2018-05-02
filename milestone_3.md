@@ -1,41 +1,39 @@
 # First results
 
-TODO seperations + text
+This text contains a summary of the work done for Milestone 3. The notebooks "JSymbolic Feat. Analysis & Discussion.ipynb" and "First classification results.ipynb" should be read before approaching this text, they provide all the detailed results of the analysis made.
 
-- bla bla about the different files + logic of not putting everything in the same document
-- Both analysis done in parallel, but in ML4 will converge
-- Explain in a few lines what has been done and that the results were not very good
-- Explain that prior assumption = challenged at first glance, seems not able to classify music by video game genres
-- Problems and Difficulties, why? How to solve?
-  - Bad midis, because of users (extreme tempo) -> solution ? See proportion, if not too much, remove, but need to have good understanding and control of features.
-  - Bad features, for our purpose from JSymbolic? Supported by results? Some features seems useless (e.g. Violin stuff), solution = make better sort of features using Cedric's analysis, maybe create new features
-  - Several genres by midi, solution = do a closer analysis of multi-genre games using random sampling, own knowledge and several sources
-- Next steps
-  - Select feature by feature, incremental process, feature verified by "hand"
-  - Implement different solutions proposed previously
-  - See if it improves the results
+This milestone was made with two concurrent processes.
+1. Analysis of the JSymbolic features (more details below) and was made in order to manually explore the features to see if they could provide some insight.
+2. Classification using all the JSymbolic features to see how well it would perform without any feature engineering.
 
 
-This text contains a summary of the work done for Milestone 3. The notebooks "JSymbolic Feat. Analysis & Discussion.ipynb" and "First classification results.ipynb" should be read before approaching this text. 
+## Analysis
+### JSymbolic features
+
+The preliminary step consisted in feeding the MIDI database to the Jsymbolic software (http://jmir.sourceforge.net/index_jSymbolic.html) in order to produce music theory-related features. This proved quite challenging as the software used a lot of memory and was slow to compute the features. In the end, the MIDIs had to be splitted by batch of 50 in order to be able to run JSymbolic. Finally, the features obtained were nicely all compiled into a file called "features.csv"
+
+Some of the more general features were analyzed by hand in order to find their pertinence to our dataset and their potential concerning classification.
+It was discovered that some of the analysed features did not show any relevant pattern if analyzed genre by genre, while others proved to be biased and ambigous by construction, providing little valid information. Some of them will certainly need to be recomputed in another way and others completely dropped. A more complete analysis can be found in the "JSymbolic Feat. Analysis & Discussion" notebook.
+
+### Classification
+
+The classification attempt proved unsuccessful, with at best 35% accuracy, and it was determined that the problem did not lie with the predictive models themselves, but was more likely linked with the data itself not providing enough information to discriminate between genres. A more detailed analysis of the classification can be found in the "First classification results" notebook.
 
 
-This milestone entailed a preliminary step followed by the main research .
+This casts a little bit of doubt upon the original hypothesis of being able to tell the genre of a game by using its music, although it is still too soon to give up. 
 
-The preliminary step consisted in feeding our MIDI database to the Jsymbolic software (http://jmir.sourceforge.net/index_jSymbolic.html) in order to produce music theory-related features. 
-The features obtained with this procedures are stored in features.csv.
+## Discussion
+### Problems and difficulties
 
-The main research comprised two main activities: on one side, the first attempt at classifing video game music by genre; on the other side, the analysis of the features used for classification in order to extract meaningful insight.
+There is certainly some doubt about the quality of the MIDI files themselves, since they are user generated. One way to deal with this problem would be to use some JSymbolic features to find MIDIs that are obviously badly coded (such as those with 10'000 BPM tempo) and do a further cleaning step
 
-The classification attemp proved unsuccessful, and it was determined that the problem didn't lie with the predictive models itself. The hypothesis that the problem lied within the data itself was therefore formulated. The analysis of the features provided some facts that also hint towards that direction. Namely, some of the analysed features didn't show any relevant pattern if analyzed genre by genre, while others proved to be biased and ambigous by construction, providing little valid information. These observations called into question both the quality of the original MIDI dataset and the pertinence of the features produced by JSymbolic. They also cast doubt upon the original hypothesis of being able to tell the genre of a game by using its music, altough it is still too soon to give up. 
+Concerning the features of JSymbolic, a more thorough analysis needs to be made to get rid of some obviously useless features, this will be done using the analysis of the "JSymbolic Feat. Analysis & Discussion" notebook. Another way of dealing with it could be to add some custom features, such as for example the compression ratio of midi files (to see the receptiveness) or using the results as key-finding algorithms as features.
 
-There are some approaches that could potentially solve our problem with the crafting of informative features. 
+Another problem could be linked to the fact that some midis were tied to several genres and it could impact the classification. If the other steps are not improving the results, this option could be explored, but it would require a lot of manual work in order to have something coherent.
 
-Concerning the quality of our dataset, the problem most likely lies in the fact that it is a dataset created by users and therefore there's no control over the correctness of the MIDI's content. A first thing to do would be discard all those MIDIs who contain values that are outliers or simply totally unresonable. This would be a form of cleaning which could improve the feature extraction done by Jsymbolic.
-[someone add more because I didn't fully understand the solution]
+### Next steps
 
-Concerning the crafting of features, it is evident that using those produced by Jsymbolic by itself isn't effective. This makes sense because the goal of these feature wasn't to do classification, and therefore we need to try adapting them to our purpose. A solution could be selecting a few among them that look promising and trying to manipulate them to create custom features. This would be done in a incremental way, i.e. by producing a feature, seeing its impact on the classification task, then adding another feature and see if there's an improvement. This approach implies fine-grained study of the existing JSymbolic features.
-
-
+Because of the result, it is evident that using all the features produced by Jsymbolic at the same time is not effective. A more iterative approach will be used for the next part. A feature would be either selected from JSymbolic already existing features, but using a more fine-grained study, such at those done in this step, in order to avoid bad features either the feature would be hand-crafted. Then the classification would be made again looking at possible improvement. Theses steps of adding feature and classifying would be repeated until a satisfying threshold would be attained. 
 
 
 
