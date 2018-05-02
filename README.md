@@ -12,9 +12,12 @@ Repository for the DH-401 course project.
 |  |  +-- midis.json
 |  +-- Data Exploration.ipynb
 |  +-- Midi Exploration.ipynb
+|  +-- JSymbolic Feat. Analysis & Discussion.ipynb
+|  +-- First classification results.ipynb
 |  +-- README.md
 +-- milestone_1.md
 +-- milestone_2.md
++-- milestone_3.md
 +-- README.md
 ```
 
@@ -26,4 +29,7 @@ The second one "scraper", contains a subfolder "vgmusic" which holds all the rel
 
 Then, the "dataset" folder contains a first jupyter notebook  named"Data Exploration.ipynb" that was used to filter unnecessary MIDI files and construct some basic statistics on the dataset. The second jupyter notebook was some experimentation of the 3rd week tutorial notebook of Digital Musicology course on 2 MIDIs from the dataset. The "README.md" in this folder lists all dependencies needed to run the scraper.
 
-On the same level as this README, are two markdown text, the first indexed being the project proposal of the first milestone explaining the aim of the project, while the second summarize the whole data gathering and preprocessing as well as some basic statistics on the dataset. 
+On the same level as this README, are three markdown text each representing a milestone of the project : 
+* The first indexed is the project proposal of the first milestone explaining the aim of the project. 
+* The second summarize the whole data gathering and preprocessing as well as some basic statistics on the dataset. 
+* The third summarizes and wraps up together the first attemps of classification and data analysis of the project.
